@@ -40,6 +40,8 @@ Console.WriteLine();
 FindEvenNumber(firstArray);
 */
 
+/*
+
 // Задайте одномерный массив, заполненный случайными числами.
 // Найдите сумму элементов, стоящих на нечётных позициях.
 // [3, 7, 23, 12] -> 19
@@ -80,9 +82,54 @@ int [] firstArray = CreateArray(size);
 PrintArray(firstArray);
 Console.WriteLine();
 FindSumOddNumber(firstArray);
-
+*/
 
 // Задайте массив вещественных чисел.
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
+
+double [] CreateArray (int size)
+{
+    double [] randomArray = new double [size];
+    for (int i = 0; i < size; i++)
+    {
+        randomArray[i] = (new Random().NextDouble()) * 100;
+    }
+    return randomArray;
+}
+
+void PrintArray (double [] arrayToPrint)
+{
+    Console.WriteLine("Array is: ");
+    for (int i = 0; i < arrayToPrint.Length; i++)
+        Console.Write (arrayToPrint[i] + " ");
+}
+
+
+void FindMaxMinArray (double[]array)
+{
+    double diff = 0;
+    double min = array[0]; 
+    double max = array[0];
+    for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i]>max)
+            {
+                max=array[i];
+            }
+            if (array[i]<min)
+            {
+                min=array[i];
+            }
+        }
+    diff = max-min;
+    Console.WriteLine("-> " + diff);
+}
+
+
+int size = 10;
+double [] firstArray = CreateArray(size);
+PrintArray(firstArray);
+FindMaxMinArray(firstArray);
+
 
